@@ -107,10 +107,22 @@ h2 {
 }
 
 /* About 섹션 */
-.about p {
-  font-size: 1.1rem;
-  line-height: 2;
-  max-width: 600px;
+.about ul {
+  list-style: none;
+  font-size: 1rem;
+  line-height: 2.2;
+}
+
+.about li {
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.about li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: #999;
 }
 
 /* 링크 네비게이션 */
