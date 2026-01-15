@@ -1,0 +1,8 @@
+{
+  "name": "jonny-kim-web",
+  "version": "1.0.0",
+  "description": "Personal website",
+  "scripts": {
+    "dev": "npx serve ."
+  }
+}
