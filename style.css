@@ -70,10 +70,28 @@ main {
 
 /* 히어로 섹션 */
 .hero {
+  position: relative;
   text-align: center;
   padding: 4rem 0;
   border-bottom: 1px solid #ddd;
   margin-bottom: 3rem;
+}
+
+.hero .notebook-lines {
+  position: absolute;
+  top: 0;
+  left: -4rem;
+  right: -4rem;
+  bottom: 0;
+  z-index: -1;
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 31px,
+    #e8e8e8 31px,
+    #e8e8e8 32px
+  );
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 h1 {
@@ -125,6 +143,96 @@ h2 {
   color: #999;
 }
 
+/* 프로젝트 카드 */
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.project-card {
+  display: block;
+  text-decoration: none;
+  color: #1a1a1a;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.project-card:hover {
+  border-color: #1a1a1a;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-card.coming-soon {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.project-card.coming-soon:hover {
+  border-color: #eee;
+  box-shadow: none;
+}
+
+.project-thumbnail {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  background-color: #f5f3f0;
+}
+
+.project-thumbnail.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+}
+
+.project-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-thumbnail img {
+  transform: scale(1.05);
+}
+
+.badge {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  background-color: #1a1a1a;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.project-info {
+  padding: 0.75rem;
+}
+
+.project-info h3 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.project-info p {
+  font-size: 0.75rem;
+  color: #666;
+  line-height: 1.4;
+}
+
 /* 링크 네비게이션 */
 .links {
   display: flex;
@@ -151,9 +259,17 @@ h2 {
   padding-right: 1rem;
 }
 
+.icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  flex-shrink: 0;
+  margin-right: 0.75rem;
+}
+
 .link-label {
   font-size: 1rem;
   letter-spacing: 0.05em;
+  flex-grow: 1;
 }
 
 .arrow {
@@ -216,5 +332,9 @@ footer p {
 
   .notebook-lines {
     display: none;
+  }
+
+  .project-cards {
+    grid-template-columns: 1fr;
   }
 }
