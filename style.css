@@ -201,6 +201,19 @@ h2 {
   transform: scale(1.05);
 }
 
+.project-thumbnail.preview {
+  height: 120px;
+}
+
+.project-thumbnail.preview iframe {
+  width: 400%;
+  height: 400%;
+  border: none;
+  transform: scale(0.25);
+  transform-origin: top left;
+  pointer-events: none;
+}
+
 .badge {
   position: absolute;
   bottom: 0.5rem;
